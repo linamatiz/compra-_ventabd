@@ -32,7 +32,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <!-- Agrega la clase text-center para centrar el título -->
-                        <div class="card-header text-center">Iniciar Sesiónnn</div>
+                        <div class="card-header text-center">Iniciar Sesión</div>
                         <div class="card-body">
                             <!-- Formulario de inicio de sesión -->
                             <form>
