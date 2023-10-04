@@ -1,0 +1,116 @@
+header {
+    color: rgb(0, 0, 0);
+    padding: 2px;
+    text-align: center;
+    background: linear-gradient(-60deg, #08fcfc, #828788);
+}
+
+.enlace li {
+    color: #fcfdfd;
+    font-size: 19px;
+    position: relative;
+    top: -63px;
+    margin-right: 20px
+}
+
+.enlace li a{
+    color: #050505;
+}
+
+.enlace li a:hover {
+    color: #ffffff;
+}
+
+.cambiar-color:hover {
+    color:#c4c4c4;
+    transition: color 0.2s;
+}
+
+head{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+
+.icono-chip {
+    margin-right: 1500px;
+    transform: translateY(-89px);
+    font-size: 36px;
+    margin-top: 20px;
+    color: #030303;
+}
+
+.icono-chip:hover{
+    color:#c4c4c4;
+    transition: color 0.2s;
+}
+
+body {
+    background: linear-gradient(500deg, #c4c4c4, #828788);
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* background: url('https://img.freepik.com/vector-gratis/fondo-tecnologia-digital-alambre-malla-red_1017-27428.jpg?size=626&ext=jpg&ga=GA1.2.1691864751.1692220645&semt=ais') no-repeat center center fixed; */
+    background-size: cover;
+}
+
+.registrarme {
+    background-color: #fcfcfc;
+    color: #030303;
+    padding: 13px 26px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.registrarme:hover {
+    background-color: #08fcfc;
+    color: #000000;
+}
+
+.registrarme {
+    position: absolute;
+    top: 5PX;
+    right: 5PX;
+    margin: 5px;
+    padding: 10px;
+    border: 5px double #0c0c0c;
+}
+
+.ingresar {
+    background-color: #fcfcfc;
+    color: #030303;
+    padding: 13px 26px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.ingresar:hover {
+    background-color: #c4c4c4;
+    color: #000000;
+}
+
+.ingresar {
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    margin: 5px;
+    padding: 10px;
+    border: 5px double #070707;
+}
+
+.caracteristicas, .acerca-de, .contacto {
+    margin: 30px;
+    padding: 30px;
+    border: 1px solid #00ffff;
+}
+
+
+
+
