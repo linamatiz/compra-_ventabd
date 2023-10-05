@@ -57,7 +57,7 @@
 
             <h1>ACAAAA</h1>
 
-            <ul>
+            {{-- <ul>
                 @foreach ($datos as $item)
                 <li>
                     {{$item->nombre}}
@@ -69,7 +69,7 @@
                     {{$item->contra}}
                 </li>
                 @endforeach
-            </ul>
+            </ul> --}}
 
             <section class="caracteristicas">
                 <h2>Características</h2>

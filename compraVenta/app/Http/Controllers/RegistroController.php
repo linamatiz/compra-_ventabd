@@ -4,32 +4,48 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+
 
 class RegistroController extends Controller {
 
     public function registrar(Request $request) {
-        $nombre = $request->input('nombre');
-        $correo = $request->input('correo');
-        $numero_documento = $request->input('numero_documento');
-        $apellido = $request->input('apellido');
-        $contra = $request->input('contra');
+        $user = new User();
 
-        try {
-            $sql = DB::insert("insert into cliente (numero_documento, nombre, apellido, correo, contra)values(?,?,?,?,?)", [
-                $request -> $numero_documento,
-                $request -> $nombre,
-                $request -> $apellido,
-                $request -> $correo,
-                $request -> $contra,
-            ]);
-        }catch(\Throwable $th) {
-            $sql = false;
-        }
+        $user->numero_documento = $request -> numerodoc;
+        $user->nombre = $request -> nombre;
+        $user->apellido = $request -> apellido;
+        $user->correo = $request -> correo;
+        $user->password = Hash::make($request -> contrasena);
 
-        if($sql) {
-            return response()->json(['mensaje' => 'Registro exitoso'], 200);
-        }else {
-            return response()->json(['mensaje' => 'Registro no exitoso'], 201);
-        }
+        $user->save();
+
+        session()->flash('registroValido', 'Registro exitoso. ¡Inicia sesión ahora!');
+
+        return redirect('/login');
+        // try {
+
+
+        //     $sql = DB::insert("insert into users (numero_documento, nombre, apellido, correo, password)values(?,?,?,?,?)", [
+        //         $request -> numerodoc,
+        //         $request -> nombre,
+        //         $request -> apellido,
+        //         $request -> correo,
+        //         $request -> contrasena,
+        //     ]);
+        // }catch(\Throwable $th) {
+        //     $sql = 0;
+        // }
+
+        // if($sql == true) {
+        //     session()->flash('registroValido', 'Registro exitoso. ¡Inicia sesión ahora!');
+
+        //     return redirect('/login');
+        // }else {
+        //     session()->flash('registroNoValido', 'no se creo bien');
+
+        //     return redirect('/login');
+        // }
     }
 }

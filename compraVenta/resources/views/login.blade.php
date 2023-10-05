@@ -14,15 +14,18 @@
 
     <body>
 
-        @if(session('alert'))
+        @if(session('errorLogin'))
+            <div class="alert alert-danger">{{ session('errorLogin') }}</div>
+        @endif
+        @if(session('registroValido'))
             <div class="alert alert-success">
-                {{ session('alert') }}
+                {{ session('registroValido') }}
             </div>
          @endif
 
-        @if (session("Incorrecto"))
+        @if (session("registroNoValido"))
             <div class="alert alert-danger">
-                {{session("Incorrecto")}}
+                {{session("registroNoValido")}}
             </div>
         @endif
         <!-- Utiliza clases para centrar vertical y horizontalmente -->
@@ -35,14 +38,15 @@
                         <div class="card-header text-center">Iniciar Sesión</div>
                         <div class="card-body">
                             <!-- Formulario de inicio de sesión -->
-                            <form>
+                            <form method="POST" action="{{ route('inicio-sesion') }}">
+                                @csrf
                                 <div class="mb-3">
-                                    <label for="usuario" class="form-label">Nombre de Usuario</label>
-                                    <input type="text" class="form-control" id="usuario" name="usuario" required>
+                                    <label for="usuario" class="form-label">Numero de documento</label>
+                                    <input type="text" class="form-control" id="usuario" name="numero_documento" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="contrasena" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="contrasena" name="contrasena" required>
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
                                 </div>
                                 <div class="row">
                                     <button type="submit" class="btn btn-primary mb-2">Iniciar Sesión</button>

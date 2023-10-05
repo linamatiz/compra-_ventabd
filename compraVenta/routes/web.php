@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\welcomeController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,14 @@ Route::get('/que_somos', [welcomeController::class, 'goQueSomos'])->name("que_so
 
 //rutas de medotos
 
-Route::get('/', [welcomeController::class, 'index'])->name("welcome.index");
+// Route::get('/', [welcomeController::class, 'index'])->name("welcome.index");
 
 Route::post('/create',[RegistroController::class, 'registrar'])->name('create');
+
+// login
+
+// Ruta para procesar el inicio de sesión de clientes
+Route::post('/inicio-sesion', [LoginController::class, 'login'])->name('inicio-sesion');
+
+// Ruta para redirigir a la vista después del inicio de sesión exitoso
+Route::view('/home', 'home')->middleware('auth.session')->name('home');

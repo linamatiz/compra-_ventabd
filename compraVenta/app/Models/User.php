@@ -17,10 +17,18 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'users'; // Nombre de la tabla en la base de datos
+    protected $primaryKey = 'numero_documento'; // Clave primaria de la tabla
+
     protected $fillable = [
-        'name',
-        'email',
+        'numero_documento',
+        'nombre',
+        'apellido',
+        'correo',
+        'fecha',
         'password',
+        'updated_at',
+        'created_at'
     ];
 
     /**
