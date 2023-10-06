@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\welcomeController;
 use App\Http\Controllers\LoginController;
@@ -19,11 +20,13 @@ use Illuminate\Support\Facades\Route;
 // rutas de navegacion (vistas)
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/registro', [welcomeController::class, 'goRegistro'])->name("registro");
 
 Route::get('/login', [welcomeController::class, 'goLogin'])->name("login");
+
+Route::get('/perfil', [HomeController::class, 'goPerfil'])->name("perfil");
 
 Route::get('/que_somos', [welcomeController::class, 'goQueSomos'])->name("que_somos");
 

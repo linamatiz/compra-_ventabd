@@ -15,15 +15,22 @@
     </head>
 
 <body>
-    <header>
-        <i class="fas fa-laptop fa-2x icono" id="miIcono"></i>
-        <h1 class="color_compraventa texto-derecha">Registrate</h1>
-          <nav>
-                  <ul class="lista-sin-marcador">
-                    <li class="alinear-derecha"><a href="index.html.html">INICIO</a></li>
-                </ul>
-          </nav>
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <span class="fs-4" style="color: white">Compra & Venta</span>
+            </a>
+
+            <div class="text-end">
+                <button type="button" class="btn btn-warning" style="background-color: white;border-color: transparent;">
+                    <a  href="{{ route('login') }}" style="text-decoration: none !important; color:black;">Inicia Sesion</a>
+                </button>
+            </div>
+          </div>
+        </div>
     </header>
+
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -52,7 +59,11 @@
                                 <label for="correo" class="form-label">Correo</label>
                                 <input type="correo" class="form-control" id="correo" name="correo" required>
                             </div>
-                            <button type="submit">Registrar</button>
+                            <div class="row justify-content-center">
+                                <button type="submit" class="btn btn-secondary justify-content-end" style="border-color: transparent; background-color: darkslategray;">
+                                    Registrate
+                                </button>
+                            </div>
                         </form>
 
                     </div>
@@ -61,16 +72,23 @@
         </div>
     </div>
 
+    <div class="container mt-5">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Company, Inc</p>
+      
+          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+          </a>
+      
+          <ul class="nav col-md-4 justify-content-end">
+            <li><a href="{{ route('que_somos') }}" class="nav-link px-2 text-secondary" style="color: black !important;">¿Quienes somos?</a></li>
+            {{-- <li><a href="#" class="nav-link px-2 text-white">Features</a></li> --}}
+          </ul>
+        </footer>
+    </div>
+
     <!-- Incluye los scripts de Bootstrap desde CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
 
-
-          <footer>
-              <p>&copy; 2023 Compra y Venta de Tecnología</p>
-          </footer>
-
-          <script src="app.js"></script>
-    </body>
 </html>
