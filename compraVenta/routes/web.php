@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\welcomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PerfilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,7 @@ Route::get('/registro', [welcomeController::class, 'goRegistro'])->name("registr
 
 Route::get('/login', [welcomeController::class, 'goLogin'])->name("login");
 
-Route::get('/perfil', [HomeController::class, 'goPerfil'])->name("perfil");
+Route::get('/perfil', [HomeController::class, 'goPerfil'])->middleware('auth.session')->name("perfil");
 
 Route::get('/que_somos', [welcomeController::class, 'goQueSomos'])->name("que_somos");
 
@@ -36,10 +37,14 @@ Route::get('/que_somos', [welcomeController::class, 'goQueSomos'])->name("que_so
 
 Route::post('/create',[RegistroController::class, 'registrar'])->name('create');
 
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // login
 
 // Ruta para procesar el inicio de sesión de clientes
 Route::post('/inicio-sesion', [LoginController::class, 'login'])->name('inicio-sesion');
+
+// Ruta para editar el perfil del usuario
+Route::put('editar-perfil', [PerfilController::class, 'update'])->name('perfil.edit');
 
 // Ruta para redirigir a la vista después del inicio de sesión exitoso
 Route::view('/home', 'home')->middleware('auth.session')->name('home');

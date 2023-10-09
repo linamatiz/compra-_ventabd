@@ -11,20 +11,6 @@ class LoginController extends Controller {
     public function goHome() {
         return redirect('/home');
     }
-
-    // public function login(Request $request) {
-
-    //     // Verificar si las credenciales son válidas
-    //     if (Auth::attempt(['numero_documento' => $request->numero_documento, 'password' => $request->password])) {
-
-    //         return redirect('/home');;
-    //     }else {
-    //         session()->flash('errorLogin', 'Credenciales incorrectas');
-    //         session()->flash('errorLogin', "false");
-    //         return redirect('/login');
-    //     }
-    // }
-
     public function login(Request $request) {
 
         $credenciales = [
@@ -49,6 +35,6 @@ class LoginController extends Controller {
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/quienes_somos');
+        return redirect('/login');
     }
 }
