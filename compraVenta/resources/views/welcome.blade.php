@@ -33,8 +33,11 @@
 
     <div class="container">
         <div class="row">
-            <div class="col">Imagen</div>
-            <div class="col">text</div>
+            <div class="col">
+                <img loading="lazy" src="{{ asset('img/pngwing.png') }}" alt="Imagen de Bienvenida" />
+            </div>
+
+            <div class="col pt-5">Descubre el futuro en tus manos con nuestra tienda de productos tecnológicos. Desde los últimos teléfonos inteligentes hasta los gadgets más novedosos y accesorios de vanguardia, tenemos todo lo que necesitas para mantenerte a la vanguardia de la tecnología. ¡Visítanos hoy y haz realidad tus sueños tecnológicos</div>
         </div>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
